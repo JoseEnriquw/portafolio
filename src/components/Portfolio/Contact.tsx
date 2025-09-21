@@ -51,7 +51,7 @@ const Contact = () => {
   // NOTE: contact form removed — keep toast for other actions if needed
 
   return (
-    <section className="py-20 px-4 bg-muted/20">
+  <section id="contact" className="py-20 px-4 bg-muted/20">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16 space-y-4">
           <h2 className="text-4xl font-bold">
@@ -63,9 +63,9 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-1 gap-12 justify-items-center">
-          {/* Contact Information + CV grouped and centered */}
-          <div className="w-full max-w-xl space-y-8 animate-fade-in mx-auto">
+        <div className="grid lg:grid-cols-2 gap-8 items-start">
+          {/* Left column: Contact info */}
+          <div className="w-full space-y-8 animate-fade-in">
             <Card className="backdrop-blur-sm bg-card/50 border-border/50">
               <CardHeader>
                 <CardTitle className="flex items-center gap-3">
@@ -100,8 +100,10 @@ const Contact = () => {
                 ))}
               </CardContent>
             </Card>
+          </div>
 
-            {/* Social Links */}
+          {/* Right column: Social + CTA */}
+          <div className="w-full space-y-8 animate-fade-in">
             <Card className="backdrop-blur-sm bg-card/50 border-border/50">
               <CardHeader>
                 <CardTitle>Redes Sociales</CardTitle>
@@ -128,35 +130,7 @@ const Contact = () => {
               </CardContent>
             </Card>
 
-            {/* Download CV */}
-            <Card className="backdrop-blur-sm bg-gradient-primary border-0 text-primary-foreground">
-              <CardContent className="p-6">
-                <div className="text-center space-y-4 text-primary-foreground">
-                  <h3 className="text-xl font-bold">¿Interesado en mi perfil?</h3>
-                  <p className="opacity-90 text-primary-foreground">
-                    Descarga mi CV completo para ver todos los detalles de mi experiencia
-                  </p>
-                  {/* Use an anchor so the file in public/ can be downloaded directly. */}
-                  <a
-                    href="/CV_Jose_Enrique_Menendez_Fernandez.pdf"
-                    download="CV_Jose_Enrique_Menendez_Fernandez.pdf"
-                    className="inline-block w-full"
-                  >
-                    <Button 
-                      asChild
-                      variant="secondary"
-                      size="lg"
-                      className="w-full bg-background text-foreground hover:bg-background/90"
-                    >
-                      <span>
-                        <Download className="mr-2 h-4 w-4" />
-                        Descargar CV
-                      </span>
-                    </Button>
-                  </a>
-                </div>
-              </CardContent>
-            </Card>
+           
           </div>
         </div>
       </div>

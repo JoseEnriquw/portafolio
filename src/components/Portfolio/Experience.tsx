@@ -8,27 +8,27 @@ const Experience = () => {
       company: "Andreani Grupo Logístico",
       position: "Desarrollador C# .Net",
       period: "Jul 2022 - Actualidad",
-      location: "Argentina",
-      description: "Desarrollo backend en el equipo de Arquitectura, dándole mantenimiento de aplicaciones / librerías para uso interno, soporte a equipos de desarrollo",
-      technologies: [".NET 6", ".NET 8", "Microservicios", "GitHub Actions", "Unit Tests", "MongoDB", "ElasticSearch", "SQL Server","Python"],
+      location: "Híbrido (Tigre, Argentina)",
+      description: "Soporte y desarrollo en el equipo de Arquitectura para soluciones backend: microservicios, APIs, librerías internas, integración y automatización CI/CD, y mejoras de observabilidad y pruebas.",
+      technologies: [".NET 6", ".NET 8", "Microservices", "Web API", "EF Core / Dapper", "SQL Server", "MongoDB", "Kafka", "GitHub Actions", "xUnit", "React", "TypeScript", "Python", "ElasticSearch", "Elastic Apm", "Redis"],
       current: true
     },
     {
       company: "Evoltis (Freelance)",
       position: "Desarrollador FullStack",
       period: "Jul 2023 - Dic 2024",
-      location: "Remote",
-      description: "Desarrollo de migraciones a través de agentes, para ir migrando los datos un servicio legacy a un nuevo sistema con Microservicios y correcciones de bugs",
-      technologies: [".NET 6", "Microservicios", "Unit Tests", "MySQL", "RabbitMQ", "NetFramework 4.7"],
+      location: "Remoto",
+      description: "Migraciones de datos desde un servicio legacy (.NET Framework 4.7 / MySQL) hacia un esquema de microservicios en .NET 6; implementé mapeos y validaciones, APIs y repositorios con EF Core, y orquestación con RabbitMQ.",
+      technologies: [".NET 6", ".NET Framework 4.7", "EF Core", "MySQL", "RabbitMQ", "Microservices", "Unit Tests"],
       current: false
     },
     {
       company: "SISA LATAM",
       position: "Desarrollador Java",
       period: "Ene 2022 - Jul 2022",
-      location: "Argentina",
-      description: "Correcciones de bugs y creaciones de features en aplicaciones de escritorio / web",
-      technologies: ["Java", "JSP", "MySQL", "Informix"],
+      location: "Remoto",
+      description: "Mantenimiento evolutivo y correctivo en sistemas legados Java: aplicaciones de escritorio y web con JSP/Servlets; implementación de features y resolución de bugs en módulos operativos.",
+      technologies: ["Java", "JSP/Servlets", "SQL (MySQL/Informix)", "Git"],
       current: false
     }
   ];

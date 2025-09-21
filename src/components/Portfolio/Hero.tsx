@@ -5,8 +5,18 @@ import { Github, Linkedin, Mail, MapPin, Code2, Download } from "lucide-react";
 
 const Hero = () => {
   const skills = [
-    "C#", ".NET", "Java", "TypeScript", "React","Python",
-    "Microservices", "MongoDB", "MySQL", "Docker"
+    "C#",
+    ".NET (6-8)",
+    "ASP.NET Web API",
+    "EF Core / Dapper",
+    "Microservices",
+    "Clean Architecture",
+    "Docker",
+    "RabbitMQ / Kafka",
+    "SQL Server / MySQL",
+    "MongoDB",
+    "React / TypeScript",
+    "Unit Tests"
   ];
 
   const handleDownloadCV = () => {
@@ -14,16 +24,13 @@ const Hero = () => {
     console.log("Downloading CV...");
   };
 
+  const base = import.meta.env.BASE_URL;
   return (
     <section className="min-h-screen flex items-center justify-center px-4 gradient-hero">
       <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
         {/* Left Column - Text Content */}
         <div className="space-y-8 animate-fade-in">
           <div className="space-y-4">
-            <div className="flex items-center gap-3 text-muted-foreground">
-              <Code2 className="h-5 w-5 text-primary" />
-              <span className="font-mono text-sm">portfolio.dev</span>
-            </div>
             
             <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
               José Enrique
@@ -32,7 +39,7 @@ const Hero = () => {
             </h1>
             
             <div className="text-xl text-muted-foreground font-medium">
-              Backend Developer & Full-Stack Engineer
+              Full-Stack Developer
             </div>
             
             <div className="flex items-center gap-2 text-muted-foreground">
@@ -68,37 +75,47 @@ const Hero = () => {
           </div>
 
           {/* Action Buttons */}
-          <div className="flex flex-wrap gap-4">
-            <Button 
-              size="lg" 
-              className="gradient-primary text-primary-foreground hover:glow-primary transition-all duration-300"
-            >
-              <Mail className="mr-2 h-4 w-4" />
-              Contactar
-            </Button>
+            <div className="flex flex-wrap gap-4">
+                <a href="#contact" className="inline-block">
+                  <Button 
+                    size="lg" 
+                    className="gradient-primary text-primary-foreground hover:glow-primary transition-all duration-300"
+                  >
+                    <Mail className="mr-2 h-4 w-4" />
+                    Contactar
+                  </Button>
+                </a>
             
-            <Button 
-              variant="outline" 
-              size="lg"
-              onClick={handleDownloadCV}
-              className="border-primary/20 hover:bg-primary/10 hover:border-primary"
-            >
-              <Download className="mr-2 h-4 w-4" />
-              Descargar CV
-            </Button>
+            {/* Download CV (served from public/) - keep only on main/hero */}
+            <a href={`${base}cv-jose-enrique-menendez-fernandez.pdf`} download className="inline-block">
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-primary/20 hover:bg-primary/10 hover:border-primary"
+              >
+                <Download className="mr-2 h-4 w-4" />
+                Descargar CV
+              </Button>
+            </a>
           </div>
 
           {/* Social Links */}
           <div className="flex gap-4">
-            <Button variant="ghost" size="icon" className="hover:text-primary hover:glow-primary">
-              <Github className="h-5 w-5" />
-            </Button>
-            <Button variant="ghost" size="icon" className="hover:text-primary hover:glow-primary">
-              <Linkedin className="h-5 w-5" />
-            </Button>
-            <Button variant="ghost" size="icon" className="hover:text-primary hover:glow-primary">
-              <Mail className="h-5 w-5" />
-            </Button>
+              <a href="https://github.com/JoseEnriquw" target="_blank" rel="noopener noreferrer" className="inline-block">
+                <Button variant="ghost" size="icon" className="hover:text-primary hover:glow-primary">
+                  <Github className="h-5 w-5" />
+                </Button>
+              </a>
+              <a href="https://www.linkedin.com/in/jos%C3%A9-enrique-men%C3%A9ndez-fern%C3%A1ndez-69a9b21a5" target="_blank" rel="noopener noreferrer" className="inline-block">
+                <Button variant="ghost" size="icon" className="hover:text-primary hover:glow-primary">
+                  <Linkedin className="h-5 w-5" />
+                </Button>
+              </a>
+              <a href="mailto:jenriq05mfdez@gmail.com" className="inline-block">
+                <Button variant="ghost" size="icon" className="hover:text-primary hover:glow-primary">
+                  <Mail className="h-5 w-5" />
+                </Button>
+              </a>
           </div>
         </div>
 
@@ -107,10 +124,18 @@ const Hero = () => {
           <Card className="p-8 backdrop-blur-sm bg-card/50 border-primary/20 glow-primary">
             <div className="space-y-6">
               <div className="text-center">
-                <div className="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-primary animate-pulse-glow"></div>
-                <h3 className="text-2xl font-bold">Full-Stack Developer</h3>
-                <p className="text-muted-foreground">Backend Specialist</p>
-              </div>
+                  {/* Profile image: uses public/yo.jpg */}
+                  <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden bg-gradient-primary animate-pulse-glow">
+                    <img
+                      src={`${base}yo.jpg`}
+                      alt="Profile"
+                      className="w-full h-full object-cover block"
+                      loading="lazy"
+                    />
+                  </div>
+                  <h3 className="text-2xl font-bold">Full-Stack Developer</h3>
+                  <p className="text-muted-foreground">Backend Specialist</p>
+                </div>
               
               <div className="grid grid-cols-2 gap-4 text-center">
                 <div>
